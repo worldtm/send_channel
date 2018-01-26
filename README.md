@@ -7,13 +7,13 @@
 سپس در خط 4 ایدی عددی خود و در خط 5 توکن ربات را جایگذاری کنید
 بقیه تنظیمات درون تلگرام انجام خواهد شد!
 <hr>
-نوسنده:
+نویسنده:
 <br>
-<a href="https://t.me/Developer_001">Dr.amir</a>
+<a href="https://t.me/Developer_001">امیر</a>
 <br>
 با تشکر از:
 <br>
-<a href="https://t.me/me_devil">Ramin</a>
+<a href="https://t.me/me_devil">رامین</a>
 <br>
 کانال ما:
 <br>
