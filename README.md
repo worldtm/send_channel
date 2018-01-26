@@ -1,4 +1,4 @@
-# send_channel
+# send channel
 سورس ارسال پیام به کانال با برداشتن ایدی فوروارد شده از کانال
 <br>
 <hr>
@@ -9,12 +9,12 @@
 <hr>
 نوسنده:
 <br>
-[Dr.amir](https://t.me/Developer_001)
+<a href="https://t.me/Developer_001">Dr.amir</a>
 <br>
 با تشکر از:
 <br>
-[Ramin](https://t.me/me_devil)
+<a href="https://t.me/me_devil">Ramin</a>
 <br>
 کانال ما:
 <br>
-[کانال ما](https://t.me/worldtm)
+<a href="https://t.me/worldtm">کانال ما</a>
