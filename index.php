@@ -1,8 +1,8 @@
 <?php
 error_reporting(0);
 //--------[Your Config]--------//
-$Dev = 140313934; //--Put Dev ID
-$Token = '278423018:AAGBbbOTZ5_n4bQ56BGumdyzGT1tU4fVNiI'; //--Put BotToken
+$Dev = ایدی عددی مدیر; //--Put Dev ID
+$Token = 'توکن'; //--Put BotToken
 $ex = explode(":",$Token);
 $BotID = $ex[0];
 //-----------------------------//
