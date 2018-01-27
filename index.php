@@ -1,14 +1,8 @@
 <?php
-/*
-به نام خداوند جان و خرد
-سورس ارسال پیام به کانال با برداشتن ایدی کانال فوروارد شده!
-توسط:
-@worldtm
-*/
 error_reporting(0);
 //--------[Your Config]--------//
-$Dev = ایدی عددی ادمین; //--Put Dev ID
-$Token = 'توکن'; //--Put BotToken
+$Dev = 140313934; //--Put Dev ID
+$Token = '278423018:AAGBbbOTZ5_n4bQ56BGumdyzGT1tU4fVNiI'; //--Put BotToken
 $ex = explode(":",$Token);
 $BotID = $ex[0];
 //-----------------------------//
@@ -83,6 +77,7 @@ $admin = admins($from_id);
 //KeyBoard
 $d_home = json_encode(['keyboard'=>[
 [['text'=>'ارسال پست جدید']],
+[['text'=>'ارسال گروهی']],
 [['text'=>'تغییر کانال']]
 ],'resize_keyboard'=>true]);
 $d_back = json_encode(['keyboard'=>[
@@ -156,6 +151,22 @@ WorldTm('SendMessage',[
     'text'=>"ارسال شد!",
     'reply_markup'=>$d_home,
     'reply_to_message_id'=>$for
+    ]);
+}
+if($textmessage == "ارسال گروهی"){
+save("step.txt","group-post");
+SendMessage($chat_id,"لطفا پست های خود را فوروارد کنید!\nتوجه داشته باشید که بعد از ارسال تمامی مطالب, تا ارسال آخرین پست به کانال صبر کنید و بعد از ارسال اخرین پیام به کانال روی دکمه بازگشت ضربه بزنید!",$d_back);
+}
+elseif($up['message']['text'] and $step == "group-post" && $fwc !== null){
+$text = str_replace($fwc,$ch,$textmessage);
+
+WorldTm('SendMessage',[
+    'chat_id'=>$chid,
+    'text'=>"$text",
+    ]);
+WorldTm('SendMessage',[
+    'chat_id'=>$chat_id,
+    'text'=>"ارسال شد!",
     ]);
 }
 }
