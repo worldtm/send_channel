@@ -95,14 +95,21 @@ if($textmessage == "/start"){
     if($admin == true || $from_id == $Dev){
 SendMessage($chat_id,"چه کاری براتون انجام بدم؟
 جهت اضافه کردن ادمین به ربات:
-/admin *id*
+/addadmin *id*
+جهت حذف ادمین از ربات:
+/demadmin *$id*
 به صورت بالا عمل کرده و به جای عدد ، آیدی عددی یارو را بگذارید.",$d_home);
 }
 }
-elseif(strpos($textmessage , '/admin ')!== false && $from_id == $Dev){
-    $id = str_replace('/admin ',"",$textmessage);
+elseif(strpos($textmessage , '/addadmin ')!== false && $from_id == $Dev){
+    $id = str_replace('/addadmin ',"",$textmessage);
 savea("admin.txt","$id\n");
 SendMessge($chat_id,"کاربر *$id* ادمین ربات شد");
+}
+elseif(strpos($textmessage , '/demadmin ')!== false && $from_id == $Dev){
+    $id = str_replace('/demadmin ',"",$textmessage);
+savea("admin.txt","str_replace($from_id,"","admin.txt")");
+SendMessge($chat_id,"کاربر *$id* دیگر ادمین ربات نیست.");
 }
 elseif($textmessage == "بازگشت"){
     if($admin == true || $from_id == $Dev){
