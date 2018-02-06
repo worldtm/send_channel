@@ -84,7 +84,6 @@ $d_back = json_encode(['keyboard'=>[
 [['text'=>'بازگشت']]
 ],'resize_keyboard'=>true]);
 //------------------------------------------------------------------------------
-
 if($textmessage == "/start" and $from_id == $Dev and $admin != true){
 if(!file_exists("step.txt")){
 save("step.txt","ch");
@@ -108,7 +107,8 @@ SendMessge($chat_id,"کاربر *$id* ادمین ربات شد");
 }
 elseif(strpos($textmessage , '/demadmin ')!== false && $from_id == $Dev){
     $id = str_replace('/demadmin ',"",$textmessage);
-savea("admin.txt","str_replace($from_id,"","admin.txt")");
+$str = str_replace($id,"","admin.txt");
+savea("admin.txt",$str);
 SendMessge($chat_id,"کاربر *$id* دیگر ادمین ربات نیست.");
 }
 elseif($textmessage == "بازگشت"){
@@ -130,7 +130,6 @@ SendMessage($chat_id,"ربات در کانال ادمین نیست!");
 }
 }
 if($step != "ch"){
-
 if($textmessage == "تغییر کانال" and $from_id == $Dev){
 save("step.txt","ch");
 SendMessage($chat_id,"پیامی از کانال خود فوروارد کنید!\nتوجه داشته باشید که از قبل ربات را در کانال خود ادمین کرده باشید!");
@@ -143,7 +142,6 @@ SendMessage($chat_id,"لطفا پست خود را فوروارد کنید!",$d_b
 elseif($up['message']['text'] and $step == "post"){
 save("step.txt","none");
 $text = str_replace($fwc,$ch,$textmessage);
-
 $msg = WorldTm('SendMessage',[
     'chat_id'=>$chid,
     'text'=>"$text",
@@ -166,7 +164,6 @@ SendMessage($chat_id,"لطفا پست های خود را فوروارد کنید
 }
 elseif($up['message']['text'] and $step == "group-post" && $fwc !== null){
 $text = str_replace($fwc,$ch,$textmessage);
-
 WorldTm('SendMessage',[
     'chat_id'=>$chid,
     'text'=>"$text",
